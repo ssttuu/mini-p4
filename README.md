@@ -1,2 +1,2 @@
 # mini-p4
-MInikube Perforce setup
+Minikube Perforce setup

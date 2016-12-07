@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  p4:
+    image: stupschwartz/p4
+    build: p4/
+    environment:
+      - P4PORT=perforce-server:1666
+      - P4CLIENT=stu-test
+      - P4USER=p4admin
+      - P4PASSWD=pass12349ers!
+    depends_on:
+      - perforce-server
+    command: p4 info
+  perforce-server:
+    image: ambakshi/perforce-server
+    ports:
+      - 8080:8080
+      - 1666:1666
